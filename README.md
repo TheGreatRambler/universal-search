@@ -1,6 +1,8 @@
 # Universal Search
 A universal search bar for Chrome
 
+## Note
+This extension will not be developed further because it seems this functionality is already existant in Chrome. Go into `settings > Manage Search Engines` and there you can add websites and edit existing websites.
 ## To download
 Go to the [Chrome Web Store](https://chrome.google.com/webstore/detail/universal-search/deknpkfddcbiohappodiankifdilkaol?hl=en&gl=US) and press install. Once this is done, use the extension!
 
