@@ -19,7 +19,7 @@ chrome.storage.sync.get(["commandIndex"], function (results) {
 			class: "circle"
 		});
 		newCommandElement.append(websiteImage);
-		var websiteInfo = $($.parseHTML("<span class='title'>" + capitalizeFirstLetter(command) + "</span><p>" + link + "</p>"));
+		var websiteInfo = $($.parseHTML("<h5>" + capitalizeFirstLetter(command) + "</h5><p class='flow-text truncate'>" + link + "</p>"));
 		newCommandElement.append(websiteInfo);
 		var taskBar = $($.parseHTML("<div class='secondary-content'></div>"));
 		var editButton = $($.parseHTML("<a href='#'><li class='large material-icons'>edit</li></a>"));
