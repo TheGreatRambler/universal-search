@@ -44,6 +44,21 @@ var websiteTemplates = {
 	medium: "https://medium.com/search?q=%s"
 };
 
+chrome.runtime.onInstalled.addListener(function (details) {
+	if (details.reason == "install") {
+		chrome.storage.sync.set({
+			commandIndex: websiteTemplates
+		}); // async
+	} else if (details.reason == "update") {
+		var thisVersion = chrome.runtime.getManifest().version;
+		console.log("Updated from " + details.previousVersion + " to " + thisVersion + "!");
+	}
+});
+
+chrome.storage.onChanged.addListener(function (changes, namespace) {
+	websiteTemplates = changes["commandIndex"].newValue;
+});
+
 function parseQueryString(query) {
 	var vars = query.split("&");
 	var query_string = {};
